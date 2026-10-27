@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Privilege Escalation Audit Toolkit</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: #e5edf7;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 24px 8%;
+            background: #0b192b;
+            border-bottom: 1px solid #193652;
+        }
+
+        header h1 {
+            color: #38bdf8;
+            font-size: 25px;
+        }
+
+        header p {
+            color: #a8bbd0;
+            margin-top: 5px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            padding: 32px;
+            background: #10243a;
+            border: 1px solid #1d4260;
+            border-radius: 14px;
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .hero h2 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            color: #c0cfdf;
+            max-width: 750px;
+        }
+
+        .notice {
+            margin-top: 20px;
+            padding: 14px;
+            background: #1d2939;
+            border-left: 4px solid #fbbf24;
+            color: #f3e4b2;
+            border-radius: 5px;
+        }
+
+        .section-title {
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+        }
+
+        .module {
+            background: #0d1c2e;
+            border: 1px solid #1c344c;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .module h3 {
+            color: #7dd3fc;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        .module p {
+            color: #aebed0;
+            font-size: 14px;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 4px 9px;
+            font-size: 12px;
+            color: #a7f3d0;
+            background: #12372f;
+            border-radius: 20px;
+        }
+
+        .features {
+            margin-top: 35px;
+            padding: 25px;
+            background: #0d1c2e;
+            border-radius: 10px;
+            border: 1px solid #1c344c;
+        }
+
+        .features ul {
+            padding-left: 22px;
+            color: #c0cfdf;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            background: #0b192b;
+            color: #91a4ba;
+            font-size: 13px;
+        }
+
+        a {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Linux Security Toolkit</h1>
+        <p>Privilege Escalation Risk Auditing & Reporting</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Linux Privilege Escalation <span>Audit Toolkit</span></h2>
+
+            <p>
+                A Python-based security auditing project that helps identify
+                Linux configuration issues and potential privilege escalation
+                risks through structured, detection-only checks.
+            </p>
+
+            <div class="notice">
+                <strong>Safe Demo Mode:</strong>
+                This public website demonstrates the toolkit interface.
+                It does not scan visitors' devices, execute exploits, or
+                provide remote system access.
+            </div>
+        </section>
+
+        <h2 class="section-title">Audit Modules</h2>
+
+        <section class="modules">
+            {% for module in modules %}
+            <article class="module">
+                <h3>{{ module }}</h3>
+                <p>
+                    Reviews relevant system information or configuration
+                    for potential security concerns.
+                </p>
+                <span class="badge">Detection Only</span>
+            </article>
+            {% endfor %}
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">Project Features</h2>
+            <ul>
+                <li>Automated collection of Linux system information</li>
+                <li>SUID/SGID and file-permission auditing</li>
+                <li>Linux capabilities and sudo configuration checks</li>
+                <li>Systemd service and cron configuration reviews</li>
+                <li>Structured JSON reports and HTML reporting</li>
+                <li>Designed for authorized auditing and educational labs</li>
+            </ul>
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">Important Limitations</h2>
+            <p>
+                Findings are review prompts, not confirmed vulnerabilities.
+                Results depend on scan permissions and the checks implemented.
+                Kernel CVE matching is not currently implemented.
+                Run the toolkit locally in an authorized test environment
+                for system-specific results.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Linux Privilege Escalation Automation Toolkit |
+        Educational and authorized security auditing only
+    </footer>
+</body>
+</html>
