@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Linux Privilege Escalation Automation Toolkit - detection-only Linux security auditing demo.">
+  <title>Linux Security Audit Toolkit</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1120;
+      --panel: #172338;
+      --border: #30435d;
+      --text: #e5edf7;
+      --muted: #a9bbd0;
+      --accent: #62d5ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      padding: 56px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #112947, #10172a);
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      max-width: 850px;
+      margin: 0 auto 12px;
+      color: var(--accent);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.2;
+    }
+    header p { color: var(--muted); }
+    .tag {
+      display: inline-block;
+      border: 1px solid #267e8e;
+      color: #91f0e5;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: .85rem;
+    }
+    main { max-width: 1050px; margin: auto; padding: 28px 18px; }
+    section {
+      margin: 20px 0;
+      padding: 24px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    h2 { color: var(--accent); margin-top: 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .module {
+      padding: 16px;
+      background: #101a2b;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .module h3 { margin: 0 0 6px; font-size: 1rem; }
+    .module p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .notice {
+      border-left: 4px solid #eab45c;
+      padding: 12px 16px;
+      background: #2a251c;
+      color: #f5dfb7;
+      border-radius: 5px;
+    }
+    a { color: var(--accent); }
+    .button {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 10px 16px;
+      border: 1px solid #4386a7;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer {
+      padding: 24px 16px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="tag">Detection-only security auditing</span>
+    <h1>Linux Privilege Escalation Automation Toolkit</h1>
+    <p>A Python-based project for identifying selected Linux configuration risks.</p>
+    <a class="button" href="https://github.com/mohammedrukhnuddinshariff-lab/linux-privilege-escalation-toolkit">View Source Code</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        This toolkit automates selected Linux security checks and organizes
+        collected evidence into JSON and HTML reports. It is designed for
+        defensive auditing, cybersecurity education, and authorized testing.
+      </p>
+      <div class="notice">
+        Demo mode: the public page displays project information only. It does
+        not connect to or scan a live Linux machine. Any sample results must
+        not be interpreted as the current security state of a real system.
+      </div>
+    </section>
+
+    <section>
+      <h2>Scanner Modules</h2>
+      <div class="grid">
+        <div class="module"><h3>01 · System Information</h3><p>Collects OS, kernel, architecture, and user context.</p></div>
+        <div class="module"><h3>02 · SUID / SGID</h3><p>Identifies selected files for manual permission review.</p></div>
+        <div class="module"><h3>03 · File Permissions</h3><p>Checks selected paths for world-writable files.</p></div>
+        <div class="module"><h3>04 · Linux Capabilities</h3><p>Collects available file capability information.</p></div>
+        <div class="module"><h3>05 · Sudo Audit</h3><p>Attempts a non-interactive review of current-user sudo rules.</p></div>
+        <div class="module"><h3>06 · Systemd Services</h3><p>Collects selected service configuration metadata.</p></div>
+        <div class="module"><h3>07 · Cron Permissions</h3><p>Checks selected cron locations for risky file permissions.</p></div>
+        <div class="module"><h3>08 · Kernel Information</h3><p>Records kernel details; automated CVE matching is not implemented.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reporting and Validation</h2>
+      <p>The local toolkit produces JSON reports, a unified findings report, and an HTML summary for manual review.</p>
+      <p>Findings are indicators for investigation, not proof of exploitability. Some checks have limited path coverage and may report errors or require authentication.</p>
+      <p><strong>Test environment:</strong> Kali Linux in VirtualBox.</p>
+      <a class="button" href="https://github.com/mohammedrukhnuddinshariff-lab/linux-privilege-escalation-toolkit">Source Code &amp; Documentation</a>
+    </section>
+
+    <section>
+      <h2>Safety and Limitations</h2>
+      <ul>
+        <li>Use the scanner only on systems you own or are authorized to audit.</li>
+        <li>The project is designed for detection and reporting, not exploitation.</li>
+        <li>Kernel CVE matching and comprehensive cron script analysis are future improvements.</li>
+        <li>Review evidence and validate results before making security decisions.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Linux Privilege Escalation Automation Toolkit · Educational and defensive use
+  </footer>
+</body>
+</html>
